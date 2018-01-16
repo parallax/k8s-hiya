@@ -16,10 +16,6 @@ spec:
       labels:
         app: '{SITENAME}-{BRANCH}-{ENVIRONMENT}'
     spec:
-      volumes:
-        - name: efs
-          hostPath:
-            path: /efs/{ENVIRONMENT}/{SITENAME}
       containers:
         - name: nginx-php
           image: 
@@ -47,9 +43,6 @@ spec:
             periodSeconds: 5
             timeoutSeconds: 2
             successThreshold: 2
-          volumeMounts:
-            - name: efs
-              mountPath: /efs
           env:
             - name: ENVIRONMENT
               value: "{ENVIRONMENT}"
