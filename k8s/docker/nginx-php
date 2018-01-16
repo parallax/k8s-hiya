@@ -1,4 +1,4 @@
-FROM richarvey/nginx-php-fpm:1.2.2 as composer
+FROM richarvey/nginx-php-fpm:1.4.0 as composer
 # Versions: https://github.com/richarvey/nginx-php-fpm/blob/master/docs/versioning.md
 
 ADD composer.json /src/
@@ -7,7 +7,7 @@ ADD composer.lock /src/
 RUN cd /src;\ 
  composer install --ignore-platform-reqs --no-scripts
 
-FROM richarvey/nginx-php-fpm:1.2.2
+FROM richarvey/nginx-php-fpm:1.4.0
 # Versions: https://github.com/richarvey/nginx-php-fpm/blob/master/docs/versioning.md
 
 ADD k8s/conf/etc/nginx/sites-enabled/site.conf /etc/nginx/sites-enabled/default.conf
