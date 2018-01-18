@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
  name: '{SITENAME}-{BRANCH}-{ENVIRONMENT}'
 spec:
-  replicas: 1
+  replicas: 4
   revisionHistoryLimit: 1
   minReadySeconds: 10
   strategy:
@@ -25,7 +25,7 @@ spec:
           resources:
             requests:
               memory: 128Mi
-              cpu: 10m
+              cpu: 100m
             limits:
               memory: 256Mi
               cpu: 500m
