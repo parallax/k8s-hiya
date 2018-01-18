@@ -16,6 +16,16 @@ spec:
       labels:
         app: '{SITENAME}-{BRANCH}-{ENVIRONMENT}'
     spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - '{SITENAME}-{BRANCH}-{ENVIRONMENT}'
+            topologyKey: "kubernetes.io/hostname"
       containers:
         - name: nginx-php
           image: 
