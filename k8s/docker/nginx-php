@@ -1,4 +1,4 @@
-FROM 140358210270.dkr.ecr.eu-west-1.amazonaws.com/nginx-php-fpm:7.1-1
+FROM 140358210270.dkr.ecr.eu-west-1.amazonaws.com/nginx-php-fpm:7.1-2
 
 ADD k8s/conf/etc/nginx/sites-enabled/site.conf /etc/nginx/sites-enabled/default.conf
 
