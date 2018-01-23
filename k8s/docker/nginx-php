@@ -1,23 +1,9 @@
-FROM richarvey/nginx-php-fpm:1.4.0 as composer
-# Versions: https://github.com/richarvey/nginx-php-fpm/blob/master/docs/versioning.md
-
-ADD composer.json /src/
-ADD composer.lock /src/
-
-RUN cd /src;\ 
- composer install --ignore-platform-reqs --no-scripts
-
-FROM richarvey/nginx-php-fpm:1.4.0
-# Versions: https://github.com/richarvey/nginx-php-fpm/blob/master/docs/versioning.md
+FROM prlx/nginx-php-fpm:7.2
 
 ADD k8s/conf/etc/nginx/sites-enabled/site.conf /etc/nginx/sites-enabled/default.conf
 
 ARG SITE_NAME
 ENV SITE_NAME=$SITE_NAME
-
-ADD k8s/conf/etc/php/php-settings.ini /usr/local/etc/php/conf.d/zz-php-settings.ini
-
-ADD k8s/conf/etc/supervisord/supervisord.conf /etc/supervisord.conf
 
 # Add the source code
 ADD / /src
