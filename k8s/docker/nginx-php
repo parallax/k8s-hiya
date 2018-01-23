@@ -1,4 +1,4 @@
-FROM prlx/nginx-php-fpm:7.2-1
+FROM prlx/nginx-php-fpm:7.1-1
 
 ADD k8s/conf/etc/nginx/sites-enabled/site.conf /etc/nginx/sites-enabled/default.conf
 
