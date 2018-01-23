@@ -39,20 +39,20 @@ spec:
             limits:
               memory: 256Mi
               cpu: 500m
-          livenessProbe:
-            httpGet:
-              path: /
-              port: nginx
-            initialDelaySeconds: 10
-            periodSeconds: 10
-          readinessProbe:
-            httpGet:
-              path: /
-              port: nginx
-            initialDelaySeconds: 10
-            periodSeconds: 5
-            timeoutSeconds: 2
-            successThreshold: 2
+          #livenessProbe:
+          #  httpGet:
+          #    path: /
+          #    port: nginx
+          #  initialDelaySeconds: 10
+          #  periodSeconds: 10
+          #readinessProbe:
+          #  httpGet:
+          #    path: /
+          #    port: nginx
+          #  initialDelaySeconds: 10
+          #  periodSeconds: 5
+          #  timeoutSeconds: 2
+          #  successThreshold: 2
           env:
             - name: ENVIRONMENT
               value: "{ENVIRONMENT}"
