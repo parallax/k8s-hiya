@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
  name: '{SITENAME}-{BRANCH}-{ENVIRONMENT}'
 spec:
-  replicas: 1
+  replicas: 2
   revisionHistoryLimit: 1
   minReadySeconds: 10
   strategy:
