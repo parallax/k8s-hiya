@@ -3,7 +3,7 @@ kind: HorizontalPodAutoscaler
 metadata:
   name: '{SITENAME}-{BRANCH}-{ENVIRONMENT}'
 spec:
-  maxReplicas: 6
+  maxReplicas: 10
   minReplicas: 2
   scaleTargetRef:
     apiVersion: extensions/v1beta1

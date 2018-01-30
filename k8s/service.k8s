@@ -4,8 +4,6 @@ metadata:
   labels:
     app: '{SITENAME}-{BRANCH}-{ENVIRONMENT}'
     primary: 'true'
-  domains:
-  - 'someawesomedomain.test.kops.nhsx.uk'
   name: 'nginx-php'
 spec:
   ports:
